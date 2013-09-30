@@ -1,0 +1,17 @@
+﻿<% provide(:title, 'Склад') %>
+<div class="add_option"><%= link_to "Добавить оборудование", new_equipment_path, 
+								class: "btn btn-large btn-primary" %></div>
+
+ <%= will_paginate @equipments %>
+<div class="equipment_table_up">
+
+<div class="equipment_photo_up">Фото</div>
+<div class="equipment_name_up">Наименование</div>
+<div class="equipment_description_up">Описание</div>
+<div class="equipment_val_up">Стоимость</div>
+<div class="equipment_count_up">Количество</div>
+</div>
+<%= render @equipments %>
+<div class="bottom_pagination_equipments">
+<%= will_paginate @equipments %>
+</div>

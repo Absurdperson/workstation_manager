@@ -1,0 +1,16 @@
+﻿<div class="inbox_table">
+
+<div class="inbox_theme"><%= link_to inbox.theme, inbox %></div>
+<div class="inbox_partner"><%= link_to inbox.partners.map(&:name).to_sentence, inbox %></div>
+<div class="inbox_equipment"><%= link_to inbox.equipments.map(&:name).to_sentence, inbox %></div>
+<div class="inbox_letter"><%= link_to "Загрузить", inbox.letters.url %></div>
+<div class="inbox_user"><%= link_to inbox.user.name, inbox %></div>
+<div class="inbox_created_at"><%= link_to inbox.created_at.strftime("%H:%M %d.%m.%Y"), inbox %></div>
+<div class="delete_inbox">
+			<% if current_user?(inbox.user) %>
+			<%= link_to "Удалить", inbox, method: :delete, data: { confirm: "Вы уверены?" }, title: inbox.theme %>
+			<% end %>
+</div>
+<div style="clear:both;"></div>
+</div>
+

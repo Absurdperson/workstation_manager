@@ -1,0 +1,25 @@
+﻿<% provide(:title, "Изменить") %>
+	<div class="new_application">
+		<%= form_for(@partner) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+
+		<h2>Контрагент</h2>
+
+		<div class="fields_partner">
+			<%= f.text_area :name, placeholder: "Название" %>
+			<%= f.text_area :director, placeholder: "Директор" %>
+			<%= f.text_area :contact_name, placeholder: "Контактное лицо" %>
+			<%= f.text_area :contact_phone, placeholder: "Телефон" %>
+			<%= f.text_area :contact_email, placeholder: "Email" %>
+			<%= f.text_area :bin, placeholder: "БИН" %>
+			<%= f.text_area :address, placeholder: "Адрес" %>
+
+		</div>
+		<br>
+		<center>
+			<%= f.submit "Сохранить", class: "btn btn-large btn-primary" %>
+			<%= link_to "Назад", :back, :class => "btn btn-large btn-primary" %>
+		</center>
+		<% end %>
+	</div>
+</div>

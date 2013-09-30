@@ -1,0 +1,21 @@
+<% provide(:title, 'Главная') %>
+
+<% if signed_in? %>
+
+<%= render file: "inboxes/home_show" %>
+
+<%= render file: "outboxes/home_show" %>
+
+<% else %>
+  <div class="center hero-unit">
+    <h1>Добро пожаловать</h1>
+
+    <h2>
+		Авторизуйтесь для начала работы
+    </h2>
+
+    <%= link_to "Авторизация", signin_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+<% end %>

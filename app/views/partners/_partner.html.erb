@@ -1,0 +1,20 @@
+﻿<div class="partner_table">
+
+<div class="partner_name"><%= link_to partner.name, partner %></div>
+<div class="partner_director"><%= link_to partner.director, partner %></div>
+<div class="contact_name"><%= link_to partner.contact_name, partner %></div>
+<div class="contact_phone"><%= link_to partner.contact_phone, partner %></div>
+<div class="contact_email"><%= link_to partner.contact_email, partner %></div>
+<div class="partner_bin"><%= link_to partner.bin, partner %></div>
+<div class="partner_address"><%= link_to partner.address, partner %></div>
+
+
+<div class="partner_delete"><% if current_user?(partner.user) %>
+<%= link_to "Удалить", partner, method: :delete,
+								 data: { confirm: "Вы уверены?" },
+								 title: partner.name %>
+<% end %>
+</div>
+
+<div style="clear:both;"></div>
+</div>

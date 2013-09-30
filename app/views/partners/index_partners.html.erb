@@ -1,0 +1,20 @@
+﻿<% provide(:title, 'Контрагенты') %>
+    <%= link_to "Добавить контрагента", addpartner_path,
+                                class: "btn btn-large btn-primary" %>
+ <%= will_paginate @partners %>
+
+<div class="partner_table_up">
+<div class="partner_name_up">Наименование</div>
+<div class="partner_director_up">Директор</div>
+<div class="contact_name_up">Контактное лицо</div>
+<div class="contact_phone_up">Телефон</div>
+<div class="contact_email_up">Email</div>
+<div class="partner_bin_up">БИН</div>
+<div class="partner_address_up">Адрес</div>
+<div class="delete_partner_up"></div>
+</div>
+
+<%= render @partners %>
+<div class="bottom_pagination_partners">
+<%= will_paginate @partners %>
+</div>

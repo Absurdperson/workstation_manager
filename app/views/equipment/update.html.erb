@@ -1,0 +1,23 @@
+<% provide(:title, "Изменить") %>
+<%= form_for(@equipment) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="new_application">
+		<h2>Оборудование</h2>
+		<div class="fields_equipment">
+			<h4><center>Название:</center></h4>	
+			<%= f.text_field :name, placeholder: "Название" %>
+			<h4><center>Краткое описание:</center></h4>	
+			<%= f.text_area :description, placeholder: "Краткое описание" %>
+			<h4><center>Количество в наличии:</center></h4>	
+			<%= f.text_field :count, placeholder: "Количество" %>
+			<h4><center>Стоимость:</center></h4>	
+			<%= f.text_field :val, placeholder: "Стоимость" %>
+			<h4><center>Фото:</center></h4>	
+			<%= f.file_field :photo, placeholder: "ФОТО" %>
+		</div>
+		<center>
+			<%= f.submit "Сохранить", class: "btn btn-large btn-primary" %>
+			<%= link_to "Назад", :back, :class => "btn btn-large btn-primary" %>	
+		</center>
+	</div>
+<% end %>

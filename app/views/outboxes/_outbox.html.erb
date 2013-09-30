@@ -1,0 +1,17 @@
+﻿<div class="outbox_table">
+<div class="outbox_theme"><%= link_to outbox.theme, outbox %></div>
+<div class="outbox_inbox_id"><%= link_to outbox.inboxes.map(&:theme).to_sentence, outbox %></div>
+<div class="outbox_partner"><%= link_to outbox.partners.map(&:name).to_sentence, outbox %></div>
+<div class="outbox_equipment"><%= link_to outbox.equipments.map(&:name).to_sentence, outbox %></div>
+<div class="outbox_letter"><%= link_to "Загрузить", outbox.letters.url %></div>
+<div class="outbox_user"><%= link_to outbox.user.name, outbox %></div>
+<div class="outbox_created_at"><%= link_to outbox.created_at.strftime("%H:%M %d.%m.%Y"), outbox %></div>
+<div class="delete_outbox">
+<% if current_user?(outbox.user) %>
+<%= link_to "Удалить", outbox, method: :delete,
+								 data: { confirm: "Вы уверены?" },
+								 title: outbox.theme %>
+<% end %>
+</div>
+<div style="clear:both;"></div>
+</div>

@@ -1,0 +1,16 @@
+﻿<div class="equipment_table">
+<div class="equipment_photo"><%= link_to image_tag(equipment.photo.url), equipment %></div>
+<div class="equipment_name"><%= link_to equipment.name, equipment %></div>
+<div class="equipment_description"><%= link_to equipment.description, equipment %></div>
+<div class="equipment_val"><%= link_to equipment.val.to_s+" тг.", equipment %></div>
+<div class="equipment_count"><%= link_to equipment.count.to_s+" шт.", equipment %></div>
+<div class="delete_equipment">
+<% if current_user?(equipment.user) %>
+<%= link_to "Удалить", equipment, method: :delete,
+								 data: { confirm: "Вы уверены?" },
+								 title: equipment.name %>
+<% end %>
+</div>
+<div style="clear:both;"></div>
+</div>
+

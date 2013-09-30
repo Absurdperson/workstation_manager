@@ -1,0 +1,18 @@
+<%= form_for @message, :html => { :multipart => true } do |f| %>
+<h1>Создать письмо</h1>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :description, placeholder: "Описание" %>
+
+				
+	<% partner_array = options_for_select(Partner.all.map { |partner| [ partner.name ] } )%>
+	<%= f.select(:partner_id, partner_array.to_s, :include_blank => @message.partner_id)  %>
+	
+	<%=  f.select(:letter_type, ["Благодарность","Претензия","Информационное","Доверенность","Уведомление"], :include_blank => "Выберите тип письма") %>
+																					
+	<h3>Письмо:</h3>
+	<%= f.file_field :letters %> 
+ </div>
+
+  <%= f.submit "Добавить", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,0 +1,773 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+    .modal {
+      width: 900px;
+    }
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+select{
+	height:40px;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+
+footer {
+	.navbar-inner {
+		height: 1em;
+		}
+  margin-bottom: 50px;
+  color: $grayLight;
+  a {
+    color: $gray;
+    &:hover {
+      color: white;
+	  text-decoration: none;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+	padding-top:10px;
+    li {
+      float: left;
+      margin-left: 7px;
+    }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+  textarea {
+  height: 100px;
+}
+}
+
+/* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+.outbox{
+  padding-right: 40px;
+  float:left;
+  width:400px;
+  margin-bottom: 40px;
+}
+
+.inbox{
+  margin-top: -20px;
+  padding-left: 40px;
+  float:left;
+  width:400px;
+  margin-bottom: 40px;
+}
+
+/* -------------------------------------------- КОНТРАГЕНТЫ -------------------------------------------- */
+.partner_table{
+  padding-bottom:10px;
+  margin-top:-10px;
+  word-wrap: break-word;
+  border-bottom: 2px solid black;
+  font-size: 12px;
+}
+.text_field{
+  hidth: 100px;
+}
+
+.partner_table_up{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  word-wrap: break-word;
+  font-size: 14px;
+  border-bottom: 2px solid black;
+  font-weight: 800;
+}
+/* -- ШАПКА -- */
+
+.partner_name_up {
+  float: left;
+  width: 120px;
+  padding-left: 10px;
+}
+.partner_director_up {
+  float: left;
+  width: 140px;
+  padding-left: 10px;
+}
+.partner_bin_up {
+  float: left;
+  width: 85px;
+  padding-left: 10px;
+}
+.contact_name_up {
+  float: left;
+  width: 130px;
+  padding-left: 10px;
+}
+.contact_phone_up {
+  float: left;
+  width: 105px;
+  padding-left: 10px;
+}
+.contact_email_up {
+  float: left;
+  width: 110px;
+  padding-left: 10px;
+}
+.partner_address_up {
+  float: left;
+  width: 110px;
+  padding-left: 10px;
+}
+.delete_partner_up {
+  float: right;
+  width: 60px;
+  padding-left: 10px;
+}
+
+/* -- СОДЕРЖИМОЕ -- */
+
+.partner_name {
+  float: left;
+  width: 120px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+.partner_director {
+  float: left;
+  width: 140px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+.partner_bin {
+  float: left;
+  width: 85px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+.contact_name {
+  float: left;
+	width: 130px;
+	padding-left: 10px;
+  padding-bottom: 1px;
+}
+.partner_address {
+  float: left;
+	width: 110px;
+	padding-left: 10px;
+  padding-bottom: 1px;
+}
+.contact_phone{
+  float: left;
+	width: 105px;
+	padding-left: 10px;
+  display: inline;
+  padding-bottom: 1px;
+}
+.contact_email{
+  float: left;
+	width: 110px;
+	padding-left: 10px;
+  padding-bottom: 1px;
+}
+.partner_delete{
+  a:hover{
+  color:red;
+  }
+  float: right;
+  width: 60px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+}
+.bottom_pagination_partners {
+	padding-top: 40px;
+}
+
+.fields_partner {
+	textarea {
+		height: 50px;
+		margin-bottom: 5px;
+	}
+}
+
+
+/* -------------------------------------------- СКЛАД -------------------------------------------- */
+.equipment_table{
+  padding-bottom:10px;
+  margin-top:-10px;
+  word-wrap: break-word;
+  border-bottom: 2px solid black;
+  font-size: 12px;
+}
+
+.equipment_table_up{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  word-wrap: break-word;
+  font-size: 14px;
+  font-weight: 800;
+  border-bottom: 2px solid black;
+}
+/* -- ШАПКА -- */
+
+.equipment_photo_up{
+  float: left;
+  width: 210px;
+  padding-left: 10px;
+}
+.equipment_name_up {
+  float: left;
+  width: 150px;
+  padding-left: 10px;
+}
+.equipment_description_up{
+  float: left;
+  width: 250px;
+  padding-left: 10px;
+}
+.equipment_val_up {
+  float: left;
+  width: 100px;
+  padding-left: 10px;
+}
+.equipment_count_up {
+  float: left;
+  width: 100px;
+  padding-left: 10px;
+}
+
+/* -- СОДЕРЖИМОЕ -- */
+
+.equipment_photo {
+  overflow:hidden; 
+  float: left;
+  width: 210px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+}
+.equipment_name {
+  float: left;
+  width: 150px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+}
+.equipment_description{
+  float: left;
+  width: 250px;
+  padding-left: 10px;
+}
+.equipment_val {
+  float: left;
+  width: 100px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+}
+.equipment_count {
+  float: left;
+  width: 100px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+}
+.delete_equipment{
+  a:hover{
+    color: red;
+  }
+  float: left;
+  width: 60px;
+  margin-left: 10px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+}
+.bottom_pagination_messages {
+  padding-top: 40px;
+}
+.fields_equipment {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+.equipment_photo_show {
+  overflow:hidden; 
+  float: left;
+  width: 400px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+}
+/* -------------------------------------------- ВХОДЯЩИЕ ЗАЯВКИ -------------------------------------------- */
+.inbox_table{
+  padding-bottom:10px;
+  word-wrap: break-word;
+  border-bottom: 2px solid black;
+  font-size: 12px;
+}
+
+.inbox_table_up{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  word-wrap: break-word;
+  font-size: 14px;
+  font-weight: 800;
+  border-bottom: 2px solid black;
+}
+/* -- ШАПКА -- */
+
+.inbox_theme_up {
+  float: left;
+  width: 100px;
+}
+.inbox_partner_up {
+  float: left;
+  width: 140px;
+}
+.inbox_equipment_up {
+  float: left;
+  width: 250px;
+}
+.inbox_user_up {
+  float: left;
+  width: 150px;
+}
+.inbox_created_at_up{
+  float: left;
+  width: 120px;
+}
+.inbox_letter_up{
+  float: left;
+  width: 100px;
+}
+.delete_inbox_up {
+  float: left;
+  width: 80px;
+}
+
+
+/* -- СОДЕРЖИМОЕ -- */
+
+.inbox_theme {
+  float: left;
+  width: 100px;
+  padding-bottom: 1px;
+}
+.inbox_partner {
+  float: left;
+  width: 140px;
+  padding-bottom: 1px;
+}
+.inbox_equipment {
+  float: left;
+  width: 250px;
+  padding-bottom: 1px;
+}
+.inbox_user{
+  float: left;
+  width: 150px;
+  padding-bottom: 1px;
+}
+.inbox_letter{
+  float: left;
+  width: 100px;
+  padding-bottom: 1px;
+}
+.inbox_created_at{
+  float: left;
+  width: 120px;
+  padding-bottom: 1px;
+}
+.delete_inbox{
+  a:hover{
+    color: red;
+  }
+  float: left;
+  width: 80px;
+  padding-bottom: 1px;
+}
+.bottom_pagination_messages {
+  padding-top: 40px;
+}
+.fields_inbox {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+/* -------------------------------------------- ИСХОДЯЩИЕ ЗАЯВКИ -------------------------------------------- */
+.outbox_table{
+  padding-bottom:20px;
+  word-wrap: break-word;
+  border-bottom: 2px solid black;
+   font-size: 12px;
+}
+.outbox_table_up{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  word-wrap: break-word;
+  font-size: 14px;
+  font-weight: 800;
+  border-bottom: 2px solid black;
+}
+/* -- ШАПКА -- */
+
+.outbox_theme_up {
+  float: left;
+  width: 90px;
+  padding-right: 10px;
+}
+.outbox_inbox_id_up{
+  float: left;
+  width: 90px;
+  padding-right: 10px;
+}
+.outbox_partner_up {
+  float: left;
+  width: 120px;
+  padding-right: 10px;
+}
+.outbox_equipment_up {
+  float: left;
+  width: 233px;
+  padding-right: 10px;
+}
+.outbox_letter_up {
+  float: left;
+  width: 62px;
+  padding-right: 10px;
+}
+.outbox_user_up {
+  float: left;
+  width: 100px;
+  padding-right: 10px;
+}
+.outbox_created_at_up{
+  float: left;
+  width: 66px;
+  padding-right: 10px;
+}
+.delete_outbox_up {
+  float: left;
+  width: 60px;
+  padding-right: 10px;
+}
+
+
+/* -- СОДЕРЖИМОЕ -- */
+
+.outbox_theme {
+  float: left;
+  width: 90px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.outbox_inbox_id{
+  float: left;
+  width: 90px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.outbox_partner {
+  float: left;
+  width: 117px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.outbox_equipment {
+  float: left;
+  width: 240px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.outbox_user {
+  float: left;
+  width: 97px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.outbox_letter{
+  float: left;
+  width: 59px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.outbox_created_at{
+  float: left;
+  width: 97px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+}
+.delete_outbox{
+  a:hover{
+    color: red;
+  }
+  padding-right: 10px;
+  float: left;
+  width: 60px;
+  margin-left: 10px;
+  padding-bottom: 1px;
+}
+.bottom_pagination_messages {
+  padding-top: 40px;
+}
+.fields_outbox {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+/* -------------------------------------------- ПИСЬМА -------------------------------------------- */
+.message_table{
+  padding-top: 10px;
+  padding-bottom:10px;
+  text-align:center;
+  word-wrap: break-word;
+  border-bottom: 2px solid black;
+}
+
+.message_table_up{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align:center;
+  word-wrap: break-word;
+  font-size: 16px;
+  border-bottom: 2px solid black;
+  font-weight: 800;
+}
+/* -- ШАПКА -- */
+
+.message_id_up{
+  float: left;
+  width: 50px;
+}
+.message_description_up {
+  float: left;
+  width: 230px;
+}
+.message_partner_up {
+  float: left;
+  width: 200px;
+}
+.message_type_up {
+  float: left;
+  width: 150px;
+}
+.letter_up {
+  float: left;
+  width: 150px;
+}
+.message_created_at_up{
+  float: left;
+  width: 80px;
+}
+.delete_message_up {
+  float: left;
+  width: 60px;
+}
+
+
+/* -- СОДЕРЖИМОЕ -- */
+
+.message_id {
+  float: left;
+  width: 50px;
+  padding-bottom: 1px;
+}
+.message_description {
+  float: left;
+  width: 230px;
+  padding-bottom: 1px;
+}
+.message_partner {
+  float: left;
+  width: 200px;
+  padding-bottom: 1px;
+}
+.message_type {
+  float: left;
+  width: 150px;
+  padding-bottom: 1px;
+}
+.letter{
+  float: left;
+  width: 150px;
+  padding-bottom: 1px;
+}
+.message_created_at{
+  float: left;
+  width: 80px;
+  padding-bottom: 1px;
+}
+.delete_message{
+  a:hover{
+    color: red;
+  }
+  float: left;
+  width: 60px;
+  margin-left: 10px;
+  padding-bottom: 1px;
+}
+.bottom_pagination_messages {
+  padding-top: 40px;
+}
+aside {
+  textarea {
+    height: 50px;
+    margin-bottom: 5px;
+  }
+}
+
+.new_application{
+	margin-top:-50px;
+	padding-left:220px;
+	height: 100px;
+	width: 500px;
+}

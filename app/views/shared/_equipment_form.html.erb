@@ -1,0 +1,17 @@
+﻿<%= form_for(@equipment) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	<div class="new_application">
+		<h2>Оборудование</h2>
+		<div class="fields_equipment">
+			<%= f.text_field :name, placeholder: "Название" %>
+			<%= f.text_area :description, placeholder: "Краткое описание" %>
+			<%= f.text_field :count, placeholder: "Количество" %>
+			<%= f.text_field :val, placeholder: "Стоимость" %>
+			<%= f.file_field :photo, placeholder: "ФОТО" %>
+		</div>
+		<center>
+			<%= f.submit "Добавить", class: "btn btn-large btn-primary" %>
+			<%= link_to "Назад", :back, :class => "btn btn-large btn-primary" %>	
+		</center>
+	</div>
+<% end %>
