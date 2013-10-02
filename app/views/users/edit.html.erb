@@ -1,11 +1,10 @@
 <% provide(:title, "Аккаунт") %>
 <h1>Аккаунт</h1>
 
-<div class="row">
-  <div class="span6 offset3">
+<div class="new_application">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-
+      <br><br>
       <%= f.label :name, "ФИО" %>
       <%= f.text_field :name %>
 
@@ -21,5 +20,4 @@
       <%= f.submit "Сохранить изменения", class: "btn btn-large btn-primary" %>
       <%= link_to "Назад", :back, :class => "btn btn-large btn-primary" %>
     <% end %>
-  </div>
 </div>

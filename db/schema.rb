@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930080009) do
+ActiveRecord::Schema.define(:version => 20131002073329) do
 
   create_table "data_files", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -65,11 +65,35 @@ ActiveRecord::Schema.define(:version => 20130930080009) do
 
   add_index "inboxes", ["user_id", "created_at", "theme"], :name => "index_inboxes_on_user_id_and_created_at_and_theme"
 
+  create_table "information", :force => true do |t|
+    t.string   "user_id"
+    t.integer  "partner_id"
+    t.string   "description"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "letters_file_name"
+    t.string   "letters_content_type"
+    t.integer  "letters_file_size"
+    t.datetime "letters_updated_at"
+  end
+
   create_table "messages", :force => true do |t|
     t.string   "description"
     t.string   "partner_id"
     t.integer  "user_id"
     t.string   "letter_type"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "letters_file_name"
+    t.string   "letters_content_type"
+    t.integer  "letters_file_size"
+    t.datetime "letters_updated_at"
+  end
+
+  create_table "notices", :force => true do |t|
+    t.string   "user_id"
+    t.integer  "partner_id"
+    t.string   "description"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "letters_file_name"
@@ -104,8 +128,8 @@ ActiveRecord::Schema.define(:version => 20130930080009) do
     t.string   "name"
     t.string   "address"
     t.integer  "user_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "contact_name"
     t.string   "contact_phone"
     t.string   "contact_email"
@@ -113,6 +137,44 @@ ActiveRecord::Schema.define(:version => 20130930080009) do
     t.integer  "outbox_id"
     t.string   "bin"
     t.string   "director"
+    t.string   "contact_date"
+    t.string   "type_of_activity"
+  end
+
+  create_table "pretensions", :force => true do |t|
+    t.string   "user_id"
+    t.integer  "partner_id"
+    t.string   "description"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "letters_file_name"
+    t.string   "letters_content_type"
+    t.integer  "letters_file_size"
+    t.datetime "letters_updated_at"
+  end
+
+  create_table "proxies", :force => true do |t|
+    t.string   "user_id"
+    t.integer  "partner_id"
+    t.string   "description"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "letters_file_name"
+    t.string   "letters_content_type"
+    t.integer  "letters_file_size"
+    t.datetime "letters_updated_at"
+  end
+
+  create_table "trusts", :force => true do |t|
+    t.string   "user_id"
+    t.integer  "partner_id"
+    t.string   "description"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "letters_file_name"
+    t.string   "letters_content_type"
+    t.integer  "letters_file_size"
+    t.datetime "letters_updated_at"
   end
 
   create_table "users", :force => true do |t|

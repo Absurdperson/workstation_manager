@@ -1,20 +1,33 @@
 ﻿<% provide(:title, 'Контрагенты') %>
+
+<%= form_tag partners_path, :method => 'get' do %>
+    <div style="width: 300px;  margin-top:-40px;">
+		<%= text_field_tag :search, params[:search], placeholder: "Поиск по наименованию" %>
+		<div style="margin-top:-37px; padding-left: 320px; height:40px;">
+			<%= submit_tag "Поиск", :name => nil %>
+		</div>
+	</div>
+<% end %>
     <%= link_to "Добавить контрагента", addpartner_path,
                                 class: "btn btn-large btn-primary" %>
  <%= will_paginate @partners %>
-
 <div class="partner_table_up">
-<div class="partner_name_up">Наименование</div>
-<div class="partner_director_up">Директор</div>
-<div class="contact_name_up">Контактное лицо</div>
-<div class="contact_phone_up">Телефон</div>
-<div class="contact_email_up">Email</div>
-<div class="partner_bin_up">БИН</div>
-<div class="partner_address_up">Адрес</div>
-<div class="delete_partner_up"></div>
+<div class="partner_name"><%= link_to "Наименование", :sort => "name" %></div>
+<div class="type_of_activity"><%= link_to "Деятельность", :sort => "type_of_activity" %></div>
+<div class="partner_director">Директор</div>
+<div class="contact_phone">Телефон</div>
+<div class="contact_email">Email</div>
+<div class="partner_bin">БИН</div>
+<div class="partner_address">Адрес</div>
+<div class="contact_date">Дата контакта</div>
+<div class="delete_partner"></div>
+
 </div>
 
 <%= render @partners %>
 <div class="bottom_pagination_partners">
 <%= will_paginate @partners %>
 </div>
+
+
+

@@ -8,12 +8,16 @@ WorkstationManager::Application.routes.draw do
   resources :equipment
   resources :inboxes do
 	resources :partners
-	resources :equipments
+	resources :equipment
   end
-  	resources :equipments
+  resources :equipments
   resources :outboxes
   resources :static_pages
   resources :messages
+  resources :pretensions
+  resources :information
+  resources :trusts
+  resources :notices
   root to: 'static_pages#home'
 
   match '/partners', to: 'partners#index_partners'

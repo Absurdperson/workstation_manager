@@ -1,10 +1,9 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+<h2><%= @user.name %></h2>
+<h3>Входящих заявок: <%= @user.inboxes.count %></h3>
+<h3>Исходящих заявок: <%= @user.outboxes.count %></h3>
+<%= render file: "inboxes/home_show" %>
+
+<%= render file: "outboxes/home_show" %>
+
+<%= will_paginate @inboxes %>

@@ -1,0 +1,18 @@
+﻿<% provide(:title, "Изменить") %>
+<h1>Изменить</h1>
+
+<div class="new_application">
+	<div class="fields_message">
+	    <%= form_for(@information) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :description, "Описание" %>
+			<%= f.text_area :description %>
+					
+			<%=  f.select(:partner_id, options_for_select(Partner.all.collect {|x| [x.name, x.id]},  :include_blank => "Выберите контрагента")) %>
+
+			<%= f.submit "Сохранить изменения", class: "btn btn-large btn-primary" %>
+			<%= link_to "Назад", :back, :class => "btn btn-large btn-primary" %>		  
+		<% end %>
+	</div>
+</div>

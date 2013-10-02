@@ -3,9 +3,9 @@
 	before_filter :correct_user,   only: :destroy
   
 	def index
-		@inboxes = current_user.inboxes.paginate(:page => params[:page], :per_page => 10)
+		@inboxes = Inbox.paginate(:page => params[:page], :per_page => 10)
 	end
-	
+
 	def create
 		@inbox = current_user.inboxes.build(params[:inbox])
 		if @inbox.save

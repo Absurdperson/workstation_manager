@@ -3,7 +3,7 @@
 	before_filter :correct_user,   only: :destroy
   
 	def index
-		@outboxes = current_user.outboxes.paginate(:page => params[:page], :per_page => 10)
+		@outboxes = Outbox.paginate(:page => params[:page], :per_page => 10)
 	end
 	
 	def create

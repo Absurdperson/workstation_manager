@@ -5,11 +5,8 @@
 <div class="equipment_val"><%= link_to equipment.val.to_s+" тг.", equipment %></div>
 <div class="equipment_count"><%= link_to equipment.count.to_s+" шт.", equipment %></div>
 <div class="delete_equipment">
-<% if current_user?(equipment.user) %>
-<%= link_to "Удалить", equipment, method: :delete,
-								 data: { confirm: "Вы уверены?" },
-								 title: equipment.name %>
-<% end %>
+
+<%= link_to "Удалить", equipment, method: :delete, data: { confirm: "Вы уверены?" }, title: equipment.name %>
 </div>
 <div style="clear:both;"></div>
 </div>

@@ -1,0 +1,12 @@
+<div class="message_table">
+<div class="message_id"><%= link_to notice.id, notice %></div>
+<div class="message_description"><%= link_to notice.description, notice %></div>
+<div class="message_partner"><%= link_to notice.partners.map(&:name).to_sentence, notice %></div>
+<div class="message_letter"><%= link_to "Загрузить", notice.letters.url %></div>
+<div class="message_user"><%= link_to notice.user.name, notice %></div>
+<div class="message_created_at"><%= link_to notice.created_at.strftime("%H:%M %d.%m.%Y"), notice %></div>
+<div class="delete_message">
+<%= link_to "Удалить", notice, method: :delete, data: { confirm: "Вы уверены?" }, title: notice.description %>
+</div>
+<div style="clear:both;"></div>
+</div>

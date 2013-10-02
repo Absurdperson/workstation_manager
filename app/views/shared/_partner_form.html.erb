@@ -4,13 +4,16 @@
 	<h2>Новый контрагент</h2>
 	
 	<div class="fields_partner">
+
     <%= f.text_area :name, placeholder: "Название" %>
 	<%= f.text_area :director, placeholder: "Директор" %>
-	<%= f.text_area :contact_name, placeholder: "Контактное лицо" %>
+	<%= f.select(:type_of_activity, ["строительство","производство","сельхозпродукция"], :include_blank => "Тип деятельности") %>
 	<%= f.text_area :contact_phone, placeholder: "Телефон" %>
 	<%= f.text_area :contact_email, placeholder: "Email" %>
 	<%= f.text_area :bin, placeholder: "БИН" %>
     <%= f.text_area :address, placeholder: "Адрес" %>
+	<%= f.text_area :contact_date, placeholder: "Дата контакта" %>
+	
 	</div>
 	<center>
 		<%= f.submit "Добавить", class: "btn btn-large btn-primary" %>
@@ -18,3 +21,4 @@
 	</center>
 <% end %>
 </div>
+

@@ -1,0 +1,12 @@
+<div class="message_table">
+<div class="message_id"><%= link_to pretension.id, pretension%></div>
+<div class="message_description"><%= link_to pretension.description, pretension %></div>
+<div class="message_partner"><%= link_to pretension.partners.map(&:name).to_sentence, pretension %></div>
+<div class="message_letter"><%= link_to "Загрузить", pretension.letters.url %></div>
+<div class="message_user"><%= link_to pretension.user.name, pretension %></div>
+<div class="message_created_at"><%= link_to pretension.created_at.strftime("%H:%M %d.%m.%Y"), pretension %></div>
+<div class="delete_message">
+<%= link_to "Удалить", pretension, method: :delete, data: { confirm: "Вы уверены?" }, title: pretension.description %>
+</div>
+<div style="clear:both;"></div>
+</div>

@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   has_many :inboxes
   has_many :outboxes
   has_many :messages
+  has_many :pretensions
+  has_many :informations
+  has_many :trusts
+  has_many :notices
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

@@ -1,16 +1,28 @@
-﻿<div class="inbox_table">
-
-<div class="inbox_theme"><%= link_to inbox.theme, inbox %></div>
+﻿<% if inbox.application_type == "Новая" %>
+<div class="inbox_table_red">
+<% end %>
+<% if inbox.application_type == "Завершена" %>
+<div class="inbox_table_green">
+<% end %>
+<% if inbox.application_type == "На рассмотрении" %>
+<div class="inbox_table_yellow">
+<% end %>
+<% if inbox.application_type == "Принята" %>
+<div class="inbox_table">
+<% end %>
+<div class="inbox_theme"><%= link_to inbox.id, inbox %></div>
 <div class="inbox_partner"><%= link_to inbox.partners.map(&:name).to_sentence, inbox %></div>
 <div class="inbox_equipment"><%= link_to inbox.equipments.map(&:name).to_sentence, inbox %></div>
-<div class="inbox_letter"><%= link_to "Загрузить", inbox.letters.url %></div>
+<div class="inbox_application_type"><%= link_to inbox.application_type, inbox %></div>
 <div class="inbox_user"><%= link_to inbox.user.name, inbox %></div>
 <div class="inbox_created_at"><%= link_to inbox.created_at.strftime("%H:%M %d.%m.%Y"), inbox %></div>
+<div class="inbox_letter">
+
+<%= link_to "Загрузить", inbox.letters.url %>
+
+</div>
 <div class="delete_inbox">
-			<% if current_user?(inbox.user) %>
-			<%= link_to "Удалить", inbox, method: :delete, data: { confirm: "Вы уверены?" }, title: inbox.theme %>
-			<% end %>
+<%= link_to "Удалить", inbox, method: :delete, data: { confirm: "Вы уверены?" }, title: inbox.theme %>
 </div>
 <div style="clear:both;"></div>
 </div>
-

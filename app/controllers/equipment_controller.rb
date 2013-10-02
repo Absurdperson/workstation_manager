@@ -9,7 +9,9 @@
 	end
   
 	def index
-		@equipments = current_user.equipments.paginate(page: params[:equipment], :per_page => 7)
+		if current_user.admin?
+			@equipments = Equipment.paginate(page: params[:equipment], :per_page => 7)
+		end
 	end
 	
 	def create

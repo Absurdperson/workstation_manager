@@ -1,9 +1,8 @@
 ﻿class MessagesController < ApplicationController
 	before_filter :signed_in_user, only: [:create, :destroy, :update, :new, :index, :show]
-	before_filter :correct_user,   only: :destroy
-  
+
 	def index
-		@messages = current_user.messages.paginate(page: params[:message])
+		@messages = Message.paginate(:page => params[:page], :per_page => 10)
 	end
 	
 	def create

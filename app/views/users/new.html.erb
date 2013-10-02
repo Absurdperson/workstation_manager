@@ -1,11 +1,11 @@
 <% provide(:title, 'Регистрация') %>
 <h1>Регистрация</h1>
 
-<div class="row">
-  <div class="span6 offset3">
+<div class="new_application">
+
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-
+      <br><br>
       <%= f.label :name, "ФИО" %>
       <%= f.text_field :name %>
 
@@ -20,5 +20,5 @@
 
       <%= f.submit "Зарегистрироваться", class: "btn btn-large btn-primary" %>
     <% end %>
-  </div>
+
 </div>

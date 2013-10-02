@@ -1,0 +1,17 @@
+﻿<% provide(:title, 'Письма') %>
+    <%= link_to "Создать письмо", new_notice_path,
+                class: "btn btn-large btn-primary" %>
+ <%= will_paginate @notices %>
+<div class="message_table_up">
+<div class="message_id">№</div>
+<div class="message_description">Описание</div>
+<div class="message_partner">Контрагент</div>
+<div class="message_letter">Письмо</div>
+<div class="message_user">Автор</div>
+<div class="message_created_at">Создано</div>
+<div class="delete_message"></div>
+</div>
+<%= render @notices %>
+<div class="bottom_pagination_messages">
+<%= will_paginate @notices %>
+</div>

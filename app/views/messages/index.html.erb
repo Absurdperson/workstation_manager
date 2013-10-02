@@ -3,13 +3,13 @@
                 class: "btn btn-large btn-primary" %>
  <%= will_paginate @messages %>
 <div class="message_table_up">
-<div class="message_id_up">№</div>
-<div class="message_description_up">Описание</div>
-<div class="message_partner_up">Контрагент</div>
-<div class="message_type_up">Тип письма</div>
-<div class="letter_up">Письмо</div>
-<div class="message_created_at_up">Создано</div>
-<div class="delete_message_up"></div>
+<div class="message_id">№</div>
+<div class="message_description">Описание</div>
+<div class="message_partner">Контрагент</div>
+<div class="message_letter">Письмо</div>
+<div class="message_user">Автор</div>
+<div class="message_created_at">Создано</div>
+<div class="delete_message"></div>
 </div>
 <%= render @messages %>
 <div class="bottom_pagination_messages">

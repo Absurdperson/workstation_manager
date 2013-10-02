@@ -26,8 +26,7 @@
   end
   
   def index_partners
-    #@user = User.find(params[:id])
-    @partners = current_user.partners.paginate(page: params[:partner])
+	@partners = Partner.paginate(page: params[:partner]).order(params[:sort]).search(params[:search])
   end
   
   def create

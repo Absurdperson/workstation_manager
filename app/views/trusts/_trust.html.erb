@@ -1,0 +1,12 @@
+<div class="message_table">
+<div class="message_id"><%= link_to trust.id, trust %></div>
+<div class="message_description"><%= link_to trust.description, trust %></div>
+<div class="message_partner"><%= link_to trust.partners.map(&:name).to_sentence, trust %></div>
+<div class="message_letter"><%= link_to "Загрузить", trust.letters.url %></div>
+<div class="message_user"><%= link_to trust.user.name, trust %></div>
+<div class="message_created_at"><%= link_to trust.created_at.strftime("%H:%M %d.%m.%Y"), trust %></div>
+<div class="delete_message">
+<%= link_to "Удалить", trust, method: :delete, data: { confirm: "Вы уверены?" }, title: trust.description %>
+</div>
+<div style="clear:both;"></div>
+</div>

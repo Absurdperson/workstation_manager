@@ -1,7 +1,7 @@
 class Outbox < ActiveRecord::Base
   attr_accessible  :theme,  :letters, :outbox_equipments, :partners, :equipments, :inboxes, :inbox_id,  :partner_id, :equipment_id, :equipment_ids, :applicaton_type
   serialize :equipments, Array
-  has_attached_file :letters
+  has_attached_file :letters, :default_url => "system/outboxes/outbox.doc"
   
   belongs_to :user
   has_many :outbox_equipments

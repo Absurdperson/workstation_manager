@@ -1,19 +1,15 @@
 <%= form_for @outbox, :html => { :multipart => true } do |f| %>
 	<div class="new_application">
 	
-		<h1>Исходящие заявки</h1>
+		<h1>Исходящая заявки</h1>
 		
 		<%= render 'shared/error_messages', object: f.object %>
 		<div class="fields_outbox">
-			<h4><center>
-				Тема заявки:
-			</center></h4>
-			<%= f.text_area :theme, placeholder: "Тема заявки" %>
-			
+		
 			<h4><center>
 				Входящая заявка:
 			</center></h4>
-			<%= f.select(:inbox_id, options_for_select(Inbox.all.collect {|x| [x.theme, x.id]}, :include_blank => "Выберите заявку")) %>
+			<%= f.select(:inbox_id, options_for_select(Inbox.all.collect {|x| [x.id]}, :include_blank => "Выберите заявку")) %>
 			
 			<h4><center>
 				Контрагент:

@@ -7,16 +7,14 @@
 	<%= render 'shared/error_messages', object: f.object %>
 	
 	<div class="fields_inbox">
-		<h4><center>Тема заявки:</center></h4>	
-		<%= f.text_area :theme, placeholder: "Тема заявки" %>
+
 		<h4><center>Контрагент:</center></h4>
 		<%=  f.select(:partner_id, options_for_select(Partner.all.collect {|x| [x.name, x.id]},  :selected => @inbox.partner_id)) %>
+		
 		<h4><center>Список оборудования:</center></h4>
 		<%= f.select(:equipment_ids, options_for_select(Equipment.all.collect { |z| [z.name, z.id] }, {:selected => @inbox.equipment_ids}),{}, {:multiple=>true, :size => 10}) %>
 
-		<h4><center>
-			Тип заявки:
-		</center></h4>
+		<h4><center>Тип заявки:</center></h4>
 		<%=  f.select(:application_type, ["Новая","Принята","На рассмотрении","Завершена"], :include_blank => "Выберите тип заявки") %>
 		<center>
 

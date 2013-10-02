@@ -1,17 +1,12 @@
 <div class="message_table">
 <div class="message_id"><%= link_to message.id, message%></div>
 <div class="message_description"><%= link_to message.description, message %></div>
-<div class="message_partner"><%= link_to message.partner_id, message %></div>
-<div class="message_type"><%= link_to message.letter_type, message %></div>
-<div class="letter"><%= link_to "Загрузить", message.letters.url %></div>
-<div class="message_created_at"><%= link_to message.created_at.to_date, message %></div>
+<div class="message_partner"><%= link_to message.partners.map(&:name).to_sentence, message %></div>
+<div class="message_letter"><%= link_to "Загрузить", message.letters.url %></div>
+<div class="message_user"><%= link_to message.user.name, message %></div>
+<div class="message_created_at"><%= link_to message.created_at.strftime("%H:%M %d.%m.%Y"), message %></div>
 <div class="delete_message">
-<% if current_user?(message.user) %>
-<%= link_to "Удалить", message, method: :delete,
-								 data: { confirm: "Вы уверены?" },
-								 title: message.description %>
-<% end %>
+<%= link_to "Удалить", message, method: :delete, data: { confirm: "Вы уверены?" }, title: message.description %>
 </div>
 <div style="clear:both;"></div>
 </div>
-

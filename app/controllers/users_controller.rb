@@ -9,11 +9,15 @@ class UsersController < ApplicationController
   end
 
   def show
-	@user = User.find(params[:id])
-	@partners = @user.partners.paginate(page: params[:page])
-	@equipments = @user.equipments.paginate(page: params[:equipment])
-	@inboxes = @user.inboxes.paginate(page: params[:inbox])
-	@outboxes = @user.outboxes.paginate(page: params[:outbox])
+  	@user = User.find(params[:id])
+  	@partners = @user.partners.paginate(page: params[:page])
+  	@equipments = @user.equipments.paginate(page: params[:equipment])
+  	@inboxes = @user.inboxes.paginate(:page => params[:page], :per_page => 10)
+  	@outboxes = @user.outboxes.paginate(:page => params[:page], :per_page => 10)
+    @messages = @user.messages.paginate(:page => params[:page], :per_page => 10)
+    @pretensions = @user.pretensions.paginate(:page => params[:page], :per_page => 10)
+    @informations = @user.informations.paginate(:page => params[:page], :per_page => 10)
+    @trusts = @user.trusts.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new
