@@ -14,7 +14,7 @@
 			<h4><center>
 				Контрагент:
 			</center></h4>
-			<%= f.select(:partner_id, options_for_select(Partner.all.collect {|x| [x.name, x.id]}, :include_blank => "Выберите контрагента")) %>
+			<%=  f.select(:partner_id, options_for_select(Partner.all.collect {|x| [x.name, x.id]},  :include_blank => "Выберите контрагента")) %>
 			
 			<h4><center>
 				Список оборудования:

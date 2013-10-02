@@ -4,10 +4,10 @@ class Inbox < ActiveRecord::Base
   has_attached_file :letters, :default_url => "system/inboxes/inbox.doc"
   
   belongs_to :user
-  has_many :partners, :foreign_key => "id", :primary_key => "partner_id"
   has_many :inbox_equipments
+  has_many :outboxes, :foreign_key => "id", :primary_key => "outbox_id"
+  has_many :partners, :foreign_key => "id", :primary_key => "partner_id"
   has_many :equipments, :through => :inbox_equipments
-  has_many :outboxes
   
   validates :user_id, presence: true
   validates :partner_id, presence: true

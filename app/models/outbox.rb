@@ -9,10 +9,7 @@ class Outbox < ActiveRecord::Base
   has_many :partners, :foreign_key => "id", :primary_key => "partner_id"
   has_many :equipments, :through => :outbox_equipments
   
-  validates :user_id, presence: true
-  validates :theme, presence: true
-  validates :partner_id, presence: true
-  #validates :equipment_id, presence: true
+
   
   default_scope order: 'outboxes.created_at DESC'
 end

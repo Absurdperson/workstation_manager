@@ -10,6 +10,9 @@
 <% if inbox.application_type == "Принята" %>
 <div class="inbox_table">
 <% end %>
+<% if inbox.application_type == "" %>
+<div class="inbox_table">
+<% end %>
 <div class="inbox_theme"><%= link_to inbox.id, inbox %></div>
 <div class="inbox_partner"><%= link_to inbox.partners.map(&:name).to_sentence, inbox %></div>
 <div class="inbox_equipment"><%= link_to inbox.equipments.map(&:name).to_sentence, inbox %></div>

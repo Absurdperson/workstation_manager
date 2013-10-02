@@ -16,7 +16,7 @@
 			<%= f.select(:equipment_ids, options_for_select(Equipment.all.collect { |z| [z.name, z.id] }, {:selected => @outbox.equipment_ids}), {}, {:multiple=>true, :size => 10}) %>
 			
 			<center>
-				<%= f.submit "Сохранить", class: "btn btn-large btn-primary",data: { confirm: "Сохранить изменения?" } %>
+				<%= f.submit "Сохранить", class: "btn btn-large btn-primary" } %>
 				<%= link_to "Назад", :back, :class => "btn btn-large btn-primary" %>
 			</center>
 		</div>

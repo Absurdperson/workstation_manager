@@ -19,6 +19,7 @@
 	def new
 		if signed_in?
 			@outbox = Outbox.new(params[:outbox])
+			@inboxes = @outbox.inboxes.build(params[:inbox])
 			@partners = @outbox.partners.build(params[:partners])
 			@equipments = @outbox.equipments.build(params[:equipments])
 		end

@@ -6,10 +6,7 @@ WorkstationManager::Application.routes.draw do
   resources :partners, only: [:create, :destroy, :edit, :show, :update]
   #Учусь на ошибках. Остальное вроде нормально получается
   resources :equipment
-  resources :inboxes do
-	resources :partners
-	resources :equipment
-  end
+  resources :inboxes
   resources :equipments
   resources :outboxes
   resources :static_pages
